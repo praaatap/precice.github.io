@@ -1,65 +1,81 @@
 /* (Material) changes to the customstyles.css start here */
 
 body {
-    font-size: 16px;
-    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    padding-top: 70px;      /* https://getbootstrap.com/docs/3.4/components/#navbar-fixed-top */
+  font-size: 16px;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 70px;
+  /* https://getbootstrap.com/docs/3.4/components/#navbar-fixed-top */
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .banner-container {
-  margin-top:-20px;
+  margin-top: -20px;
 }
+
 a.navbar-brand {
-    padding-top: 12px;
+  padding-top: 12px;
 }
+
 .navbar-brand-text {
-    height: 28px;
-    padding-left: 1px; /* 1px */
-    display: inline;
-    vertical-align: top;
+  height: 28px;
+  padding-left: 1px;
+  /* 1px */
+  display: inline;
+  vertical-align: top;
 }
+
 /* use :before pseudo-class to rotate icon independent of text */
 .navbar-brand-icon:before {
-    width: 25px;
-    height: 25px;
-    content: '';
-    display: inline-block;
-    background: url('../images/icon.svg');
-    background-size: 25px 25px;
-    background-repeat: no-repeat;
-    background-position: top left;
-    transition: all 400ms;
+  width: 25px;
+  height: 25px;
+  content: '';
+  display: inline-block;
+  background: url('../images/icon.svg');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  transition: all 400ms;
 }
-a:hover > .navbar-brand-icon:before{
-    transform: rotate(180deg);
+
+a:hover>.navbar-brand-icon:before {
+  transform: rotate(180deg);
 }
+
 /* .nav styles both topnav and sidenav, so use .nav.navbar-nav */
-.nav.navbar-nav > li > a {
-    font-size: 14px;
-    line-height: 20px;
-    padding: 4px 10px;
-    font-weight: 500;
-    margin-top: 11px;
+.nav.navbar-nav>li>a {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 4px 10px;
+  font-weight: 500;
+  margin-top: 11px;
+  color: var(--primary-color);
 }
-.nav > li > a {
-    font-size: 14px;
-    line-height: 20px;
-    padding: 4px 10px;
+
+.nav>li>a {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 4px 10px;
+  color: var(--primary-color);
 }
+
 /* rightmost icons */
-.nav > li > a.nav-external {
-    font-size: 24px;
-    line-height: 20px;
-    padding: 2px 0px;
-    margin-top: 11px;
+.nav>li>a.nav-external {
+  font-size: 24px;
+  line-height: 20px;
+  padding: 2px 0px;
+  margin-top: 11px;
+  color: var(--primary-color);
 }
+
 @media (max-width: 1200px) {
-    .nav > li > a.nav-external {
-        float: left;
-    }
+  .nav>li>a.nav-external {
+    float: left;
+  }
 }
+
 /* Fix Firefox/normalize.css bug https://github.com/necolas/normalize.css/issues/740 */
-details > summary {
+details>summary {
   display: list-item;
   margin-bottom: 10px;
 }
@@ -67,28 +83,29 @@ details > summary {
 /* General layout classes */
 
 h2.page-header {
-  /*border-bottom: 1px solid #0A76BB;*/
-  border-bottom: 1px solid rgba(10,118,187, 0);
+  border-bottom: 1px solid rgba(10, 118, 187, 0);
   font-size: 28px;
 }
+
 .row {
   margin-bottom: 0px;
 }
+
 .panel-precice {
   padding-top: 5px;
 }
+
 .panel-heading-precice {
   position: relative;
-  /*left: -5px;
-  padding: 10px 15px 10px 18px;
-  border-left: 2px solid #ED762C;*/
   margin-bottom: -15px;
   padding: 10px 15px;
 }
+
 .panel-heading-precice strong {
   font-size: 1.2em;
   line-height: 1.2em;
   font-weight: 500;
+  color: var(--text-color);
 }
 
 /* General utility classes */
@@ -96,139 +113,164 @@ h2.page-header {
 .no-margin {
   margin: 0;
 }
+
 .less-top-margin {
   margin-top: -20px;
 }
+
 .less-bottom-margin {
   margin-bottom: -20px;
 }
+
 .citation-link {
   margin-top: 15px;
 }
-.vertical-align { /* https://stackoverflow.com/questions/20547819/vertical-align-with-bootstrap-3/25517025#25517025 */
-    display: flex;
-    align-items: center;
-}
-/* https://stackoverflow.com/questions/19695784/how-can-i-make-bootstrap-columns-all-the-same-height */
-/* https://stackoverflow.com/questions/20503064/twitter-bootstrap-3-panels-of-equal-height-in-a-fluid-row */
-/*.equal {
+
+.vertical-align {
+  /* https://stackoverflow.com/questions/20547819/vertical-align-with-bootstrap-3/25517025#25517025 */
   display: flex;
-  display: -webkit-flex;
-  flex-wrap: wrap;
-}*/
+  align-items: center;
+}
+
 @media (min-width: 992px) {
-   .equal{
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-    }
+  .equal {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
 }
+
 /* add horizontal scoll on code blocks */
-pre > code {
-  overflow: auto;
-  word-wrap: normal;
-  white-space: pre;
+pre>code {
+  background-color: transparent;
+  padding: 0;
 }
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
 div.col-flex {
   display: flex;
   flex-flow: column;
-  align-content: stretch;  /* file up remaining space */
+  align-content: stretch;
+  /* file up remaining space */
 }
 
 /* Search bar and results */
 #search-demo-container div#search-results {
   list-style: none;
   font-size: 12px;
-  background-color: white;
+  background-color: var(--navbar-bg);
   position: absolute;
-  top: 40px; /* if you change anything about the nav, you'll prob. need to reset the top and left values here.*/
+  top: 40px;
+  /* if you change anything about the nav, you'll prob. need to reset the top and left values here.*/
   left: 20px;
   z-index: 69;
   width: 380px;
-  border-left: 1px solid #dedede;
-  box-shadow: 2px 3px 2px #dedede;
+  border-left: 1px solid var(--border-color);
+  box-shadow: 2px 3px 2px var(--border-color);
   max-height: 800px;
   overflow: auto;
 }
+
 .result-item {
-  /*margin-bottom: 30px;*/
-  border-top: 1px solid whitesmoke;
+  border-top: 1px solid var(--border-color);
 }
+
 a.result-link {
   font-size: 14px;
+  color: var(--link-color);
 }
+
 .result-link .ais-Highlight {
-  color: #111;
+  color: var(--text-color);
   font-style: normal;
   text-decoration: underline;
 }
+
 .nav li #search-results a.result-breadcrumbs {
-  color: #424242;
+  color: var(--text-muted);
   font-size: 15px;
   display: block;
   padding-left: 10px;
 }
+
 .result-breadcrumb {
-  /*font-size: 18px;*/
-  color: #424242;
+  color: var(--text-muted);
 }
+
 .result-breadcrumb .ais-Highlight {
   font-weight: bold;
   font-style: normal;
 
 }
+
 .result-snippet .ais-Highlight {
-  color: #2a7ae2;
+  color: var(--primary-color);
   font-style: normal;
   font-weight: bold;
 }
+
 .result-snippet img {
   display: none;
 }
+
 .result-snippet {
-  color: #333;
+  color: var(--text-muted);
   padding-left: 10px;
 }
+
 #search-results h2 {
   font-size: 18px;
   margin: 0;
   line-height: 1.2em;
   margin-top: 5px;
   padding-left: 10px;
+  color: var(--text-color);
 }
+
 #search-results a {
   background-color: transparent;
   display: inline;
 }
+
 #search-results a:hover {
-  color: #333;
+  color: var(--primary-color);
 }
+
 .nav li #search-results a {
   line-height: 1em;
   font-size: 1em;
   display: inline;
   padding: 0px;
 }
+
 #search-results p {
   margin-bottom: 5px;
 }
 
 /* Contributors section */
 .devlist {
-  border: 1px solid #0a76bb;
+  border: 1px solid var(--primary-color);
   border-radius: 5px;
   padding: 0;
 }
+
 .devlist>li.devlist-first {
   border-top: 1px solid transparent;
 }
+
 ul.devlist>li {
   display: flex;
   flex-flow: row wrap;
-  border-top: 1px solid #0a76bb;
+  border-top: 1px solid var(--primary-color);
   border-radius: 5px;
   padding: 8px 16px;
   margin: 0;
+  background-color: var(--bg-color);
 }
 
 .devlist>li .devlist-img {
@@ -238,18 +280,21 @@ ul.devlist>li {
   margin-right: 1rem;
 
 }
+
 .devlist>li .devlist-img>img {
   border-radius: 5px;
   width: 100%;
   margin: 0;
-  border: 1px solid lightgrey;
+  border: 1px solid var(--border-color);
 }
+
 .devlist>li .devlist-left {
   flex: 1 1 0px;
   width: auto;
   align-items: center;
   display: flex;
 }
+
 .devlist>li .devlist-right {
   flex: 0 0 auto;
   width: auto;
@@ -262,45 +307,49 @@ ul.devlist>li {
   align-items: center;
   font-size: larger;
 }
+
 .devlist>li .devlist-right li+li {
   margin-left: 16px;
 }
-.devlist-left > p {
+
+.devlist-left>p {
   margin-bottom: 0;
+  color: var(--text-color);
 }
 
 /* preCICE workshop 2021 */
 .workshop-event {
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   padding: 9.5px;
   margin-bottom: 10px;
+  background-color: var(--panel-bg);
 }
+
 .workshop-event p:first-of-type {
   margin-top: 10px;
 }
-/**:focus
-{
-  outline: none;
-}*/
+
 @media screen and (max-width: 767px) {
-  .table-responsive > .table > thead > tr > th,
-  .table-responsive > .table > tbody > tr > th,
-  .table-responsive > .table > tfoot > tr > th,
-  .table-responsive > .table > thead > tr > td,
-  .table-responsive > .table > tbody > tr > td,
-  .table-responsive > .table > tfoot > tr > td {
+
+  .table-responsive>.table>thead>tr>th,
+  .table-responsive>.table>tbody>tr>th,
+  .table-responsive>.table>tfoot>tr>th,
+  .table-responsive>.table>thead>tr>td,
+  .table-responsive>.table>tbody>tr>td,
+  .table-responsive>.table>tfoot>tr>td {
     white-space: normal;
   }
 }
 
 /* print styles */
 @media print {
-  /* https://www.matuzo.at/blog/i-totally-forgot-about-print-style-sheets/ */
+
   #tg-sb-sidebar,
   .githubEditButton {
     display: none;
   }
+
   body {
     padding-top: 0;
   }
@@ -308,54 +357,57 @@ ul.devlist>li {
 
 /* Testimonials == community stories */
 @media (max-width: 767px) {
-  .testimonials h2{
+  .testimonials h2 {
     padding-top: 80px;
   }
 }
 
-/* 
-  Let the sidebar scroll up some amount, then fix in place
-  Uses 'position: sticky' which offsets relative to its nearest scrolling ancestor and containing block
-  see https://developer.mozilla.org/en-US/docs/Web/CSS/position
-*/
-ul.nav.affix { 
-  position: static; /* override 'position: fixed' for <ul> */
+ul.nav.affix {
+  position: static;
+  /* override 'position: fixed' for <ul> */
 }
+
 div#tg-sb-sidebar {
-  position: sticky; /* set for <div> instead of <ul> */
+  position: sticky;
+  /* set for <div> instead of <ul> */
   top: 40px;
 }
-/* Unstick the sidebar if window is too small */
-@media (max-height: 850px) { /* this value may need to be updated if sidebar height increases */
-  div#tg-sb-sidebar  {
+
+@media (max-height: 850px) {
+
+  /* this value may need to be updated if sidebar height increases */
+  div#tg-sb-sidebar {
     position: static;
   }
 }
-/* Unstick on mobile */
+
 @media (max-width: 991px) {
-  div#tg-sb-sidebar  {
+  div#tg-sb-sidebar {
     position: static;
   }
-  /* style navtabs */
-  .post-content ol li, .post-content ul li {
+
+  .post-content ol li,
+  .post-content ul li {
     margin: 0px;
   }
+
   div.tab-content {
     padding: 0px;
-    background-color: white;
-    }
+    background-color: var(--bg-color);
+  }
+
   div.tab-content div.tab-pane pre {
     margin-top: 0px;
   }
 }
 
 /* Hide default marker Chromium/WebKit */
-details > summary::-webkit-details-marker {
+details>summary::-webkit-details-marker {
   display: none !important;
 }
 
 /* Hide default marker in Firefox */
-details > summary {
+details>summary {
   list-style: none;
   cursor: pointer;
   position: relative;
@@ -363,7 +415,7 @@ details > summary {
 }
 
 /* closed */
-details > summary::after {
+details>summary::after {
   content: "▼";
   position: absolute;
   right: 0;
@@ -373,6 +425,38 @@ details > summary::after {
 }
 
 /* open */
-details[open] > summary::after {
+details[open]>summary::after {
   content: "▲";
+}
+
+/* Theme Toggle Button Styles */
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+  margin-left: 10px;
+}
+
+#theme-toggle:hover {
+  color: var(--secondary-color);
+}
+
+[data-theme='dark'] #sun-icon {
+  display: inline-block;
+}
+
+[data-theme='dark'] #moon-icon {
+  display: none;
+}
+
+#sun-icon {
+  display: none;
+}
+
+#moon-icon {
+  display: inline-block;
 }
