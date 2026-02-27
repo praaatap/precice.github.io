@@ -376,3 +376,9 @@ details > summary::after {
 details[open] > summary::after {
   content: "▲";
 }
+
+/* Prevent long URLs from breaking the mobile layout */
+.post-content a {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
