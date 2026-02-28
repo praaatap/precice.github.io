@@ -1,67 +1,54 @@
-<footer class="background-dark">
-  <div class="container">
-
 {% if page.layout != "landing_page" %}
-    <div class="row equal">
-      <div class="col-md-4" style="background:white;border-radius:1rem;padding:0 3rem;margin:0 auto 50px auto;">
-        <h2> The preCICE newsletter </h2>
-        {% include newsletter.html %}
-        </div>
-    </div>
+<div class="row equal">
+  <div class="col-md-4" style="background:white;border-radius:1rem;padding:0 3rem;margin:0 auto 50px auto;">
+    <h2> The preCICE newsletter </h2>
+    {% include newsletter.html %}
+  </div>
+</div>
 {% endif %}
 
-    <div class="row equal text-center">
-      <div class="col-md-4">
-        <nav aria-label="Footer left">
-          <ul class="list-unstyled">
-            <li>
-              <a href="fundamentals-literature-guide.html">Cite preCICE</a>
-            </li>
-            <li>
-              <a href="community-contribute-to-precice.html">Contribute</a>
-            </li>
-            <li>
-              <a href="community-support-precice.html">Get support</a>
-            </li>
-            <li>
-              <a href="community-training.html">Get training</a>
-            </li>
-          </ul>
-        </nav>
+<footer class="stitch-footer">
+  <div class="stitch-footer-container">
+    <div class="stitch-footer-grid">
+      <div class="stitch-footer-col-nav">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="fundamentals-literature-guide.html">Cite preCICE</a></li>
+          <li><a href="community-contribute-to-precice.html">Contribute</a></li>
+          <li><a href="community-support-precice.html">Get support</a></li>
+          <li><a href="community-training.html">Get training</a></li>
+        </ul>
       </div>
 
-      <div class="col-md-4">
-        <nav aria-label="Footer right">
-          <ul class="list-unstyled">
-            <li>
-              <a class="no-icon" href="https://precice.discourse.group">Forum on Discourse</a>
-            </li>
-            <li>
-              <a class="no-icon" href="https://github.com/precice">preCICE on GitHub</a>
-            </li>
-            <li>
-              <a href="fundamentals-license.html">License</a>
-            </li>
-            <li>
-              <a href="about.html">Impressum / Legal</a>
-            </li>
-          </ul>
-        </nav>
+      <div class="stitch-footer-col-nav">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://precice.discourse.group">Forum on Discourse</a></li>
+          <li><a href="https://github.com/precice">preCICE on GitHub</a></li>
+          <li><a href="fundamentals-license.html">License</a></li>
+          <li><a href="about.html">Impressum / Legal</a></li>
+        </ul>
       </div>
 
-      <div class="col-md-4">
-        <p>
-        <a class="no-icon" rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-          <img alt="This work is licensed under a Creative Commons Attribution 4.0 International License." src="images/licensebutton-by-40_88x31.png" />
-        </a>
-        </p>
-        <p>
-        Page last updated: {{page.last_modified_at | date: "%b %-d, %Y" }}<br>
-        Site last updated: {{ site.time | date: "%b %-d, %Y"  }}
-        </p>
-        <p>
-        <i class="fas fa-shield-halved" aria-hidden="true"></i> This website does not use cookies
-        </p>
+      <div class="stitch-footer-col-spacer"></div>
+
+      <div class="stitch-footer-col-meta">
+        <div class="stitch-footer-icons">
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+            <i class="fab fa-creative-commons"></i>
+            <i class="fab fa-creative-commons-by"></i>
+          </a>
+        </div>
+
+        <div class="stitch-footer-info">
+          <p>Page last updated: {{page.last_modified_at | date: "%b %-d, %Y" }}</p>
+          <p>Site last updated: {{ site.time | date: "%b %-d, %Y" }}</p>
+        </div>
+
+        <div class="stitch-footer-cookie">
+          <i class="fas fa-shield-halved" aria-hidden="true"></i>
+          <span>This website does not use cookies</span>
+        </div>
       </div>
     </div>
   </div>
