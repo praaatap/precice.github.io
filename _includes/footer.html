@@ -1,67 +1,138 @@
-<footer class="background-dark">
+<style>
+  .custom-footer {
+    background-color: #337ab7;
+    color: white;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .custom-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .custom-footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  .custom-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .custom-footer-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .custom-footer-links a:hover,
+  .custom-footer-links a:focus {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+
+  .footer-info-text {
+    color: white;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+  }
+
+  .footer-col-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+  }
+
+  .custom-footer h5 {
+    color: white;
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  @media (min-width: 768px) {
+    .custom-footer-grid {
+      grid-template-columns: 1fr 1fr 2fr;
+      text-align: left;
+    }
+
+    .footer-col-right {
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .footer-flex-center {
+      justify-content: flex-end;
+    }
+  }
+</style>
+
+<footer class="custom-footer">
   <div class="container">
 
-{% if page.layout != "landing_page" %}
-    <div class="row equal">
-      <div class="col-md-4" style="background:white;border-radius:1rem;padding:0 3rem;margin:0 auto 50px auto;">
-        <h2> The preCICE newsletter </h2>
+    {% if page.layout != "landing_page" %}
+    <div style="display:flex; justify-content:center; margin-bottom: 50px;">
+      <div style="background:white; border-radius:1rem; padding:1.5rem 3rem; max-width: 400px; width:100%; color:#333;">
+        <h2 style="text-align:center; font-size: 2rem; margin-top:0; margin-bottom: 1rem;"> The preCICE newsletter </h2>
         {% include newsletter.html %}
-        </div>
+      </div>
     </div>
-{% endif %}
+    {% endif %}
 
-    <div class="row equal text-center">
-      <div class="col-md-4">
-        <nav aria-label="Footer left">
-          <ul class="list-unstyled">
-            <li>
-              <a href="fundamentals-literature-guide.html">Cite preCICE</a>
-            </li>
-            <li>
-              <a href="community-contribute-to-precice.html">Contribute</a>
-            </li>
-            <li>
-              <a href="community-support-precice.html">Get support</a>
-            </li>
-            <li>
-              <a href="community-training.html">Get training</a>
-            </li>
-          </ul>
-        </nav>
+    <div class="custom-footer-grid">
+      <div>
+        <h5>Quick Links</h5>
+        <ul class="custom-footer-links">
+          <li><a href="fundamentals-literature-guide.html">Cite preCICE</a></li>
+          <li><a href="community-contribute-to-precice.html">Contribute</a></li>
+          <li><a href="community-support-precice.html">Get support</a></li>
+          <li><a href="community-training.html">Get training</a></li>
+        </ul>
       </div>
-
-      <div class="col-md-4">
-        <nav aria-label="Footer right">
-          <ul class="list-unstyled">
-            <li>
-              <a class="no-icon" href="https://precice.discourse.group">Forum on Discourse</a>
-            </li>
-            <li>
-              <a class="no-icon" href="https://github.com/precice">preCICE on GitHub</a>
-            </li>
-            <li>
-              <a href="fundamentals-license.html">License</a>
-            </li>
-            <li>
-              <a href="about.html">Impressum / Legal</a>
-            </li>
-          </ul>
-        </nav>
+      <div>
+        <h5>Community</h5>
+        <ul class="custom-footer-links">
+          <li><a href="https://precice.discourse.group">Forum on Discourse</a></li>
+          <li><a href="https://github.com/precice">preCICE on GitHub</a></li>
+          <li><a href="fundamentals-license.html">License</a></li>
+          <li><a href="about.html">Impressum / Legal</a></li>
+        </ul>
       </div>
-
-      <div class="col-md-4">
-        <p>
-        <a class="no-icon" rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-          <img alt="This work is licensed under a Creative Commons Attribution 4.0 International License." src="images/licensebutton-by-40_88x31.png" />
-        </a>
-        </p>
-        <p>
-        Page last updated: {{page.last_modified_at | date: "%b %-d, %Y" }}<br>
-        Site last updated: {{ site.time | date: "%b %-d, %Y"  }}
-        </p>
-        <p>
-        <i class="fas fa-shield-halved" aria-hidden="true"></i> This website does not use cookies
-        </p>
+      <div class="footer-col-right">
+        <div style="margin-bottom: 1rem;">
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"
+            style="color: white; text-decoration: none;">
+            <i class="fa-brands fa-creative-commons" style="font-size: 1.875rem;"></i>
+            <i class="fa-brands fa-creative-commons-by" style="font-size: 1.875rem;"></i>
+          </a>
+        </div>
+        <p class="footer-info-text">Page last updated: {{page.last_modified_at | date: "%b %-d, %Y" }}</p>
+        <p class="footer-info-text">Site last updated: {{ site.time | date: "%b %-d, %Y" }}</p>
+        <div class="footer-info-text footer-flex-center">
+          <i class="fa-solid fa-shield"></i> This website does not use cookies
+        </div>
       </div>
     </div>
   </div>
