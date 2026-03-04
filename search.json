@@ -4,30 +4,88 @@ layout: none
 search: exclude
 ---
 
+{% assign search_items = "" | split: "," %
+}
+
+{% for page in site.pages %
+}
+  {% unless page.search == "exclude" %
+}
+    {% assign item_url = page.url | replace_first: "/",
+    "" %
+}
+    {% capture item_json %
+}
+    {
+    "title": {
+        { page.title | jsonify
+        }
+    },
+    "tags": {
+        { page.tags | jsonify
+        }
+    },
+    "keywords": {
+        { page.keywords | jsonify
+        }
+    },
+    "url": {
+        { item_url | jsonify
+        }
+    },
+    "summary": {
+        { page.summary | strip | jsonify
+        }
+    }
+}
+    {% endcapture %
+}
+    {% assign search_items = search_items | push: item_json %
+}
+  {% endunless %
+}
+{% endfor %
+}
+
+{% for post in site.posts %
+}
+  {% assign item_url = post.url | replace_first: "/",
+    "" %
+}
+  {% capture item_json %
+}
+  {
+    "title": {
+        { post.title | jsonify
+        }
+    },
+    "tags": {
+        { post.tags | jsonify
+        }
+    },
+    "keywords": {
+        { post.keywords | jsonify
+        }
+    },
+    "url": {
+        { item_url | jsonify
+        }
+    },
+    "summary": {
+        { post.summary | strip | jsonify
+        }
+    }
+}
+  {% endcapture %
+}
+  {% assign search_items = search_items | push: item_json %
+}
+{% endfor %
+}
+
 [
-{% for page in site.pages %}
-{% unless page.search == "exclude" %}
-{
-"title": "{{ page.title | escape }}",
-"tags": "{{ page.tags }}",
-"keywords": "{{page.keywords}}",
-"url": "{{ page.url | remove: "/"}}",
-"summary": "{{page.summary | strip }}"
-}
-{% unless forloop.last and site.posts.size < 1 %},{% endunless %}
-{% endunless %}
-{% endfor %}
-
-{% for post in site.posts %}
-
-{
-"title": "{{ post.title | escape }}",
-"tags": "{{ post.tags }}",
-"keywords": "{{post.keywords}}",
-"url": "{{ post.url | remove: "/" }}",
-"summary": "{{post.summary | strip }}"
-}
-{% unless forloop.last %},{% endunless %}
-{% endfor %}
-
+    {
+        { search_items | join: ","
+        }
+    }
 ]
