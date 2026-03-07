@@ -1257,3 +1257,29 @@ h4.panel-title {
   padding: 16px 0;
   text-align: center;
 }
+
+/* Copy Code Button */
+div.highlighter-rouge {
+    position: relative;
+}
+.copy-code-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 4px 8px;
+    font-size: 14px;
+    color: #666;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 10;
+}
+.copy-code-btn:hover {
+    background-color: #e8e8e8;
+    color: #333;
+}
+div.highlighter-rouge:hover .copy-code-btn {
+    opacity: 1;
+}
